@@ -30,6 +30,5 @@ public class RunApp {
     System.out.println(normalServiceCounter.nextToken());
     System.out.println(premiumServiceCounter.nextToken());
 
-
   }
 }
