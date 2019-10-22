@@ -1,6 +1,10 @@
 # Application Submission System using Kafka
 Using Kafka developing an application submission system.
 
+### Pre-requisites
+* Java >= 8
+* Queues should already be existing in kafka.
+
 ### Steps to run the App
 * Configure the `application.properties` file with kafka configs etc.
 * Run `mvn clean install` to build the application.
