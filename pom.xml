@@ -1,32 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>application-submission-system</artifactId>
 
-    <groupId>com.brillio</groupId>
-    <artifactId>application-submission-system</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.11</artifactId>
-            <version>2.3.0</version>
-        </dependency>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <version>5.5.2</version>
+          </dependency>
+        </dependencies>
+        <version>2.22.2</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+    <dependency>
+      <artifactId>kafka_2.11</artifactId>
+      <groupId>org.apache.kafka</groupId>
+      <version>2.3.0</version>
+    </dependency>
 
-    </dependencies>
+    <dependency>
+      <artifactId>log4j</artifactId>
+      <groupId>log4j</groupId>
+      <version>1.2.17</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>mockito-core</artifactId>
+      <groupId>org.mockito</groupId>
+      <scope>test</scope>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>5.5.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <groupId>org.mockito</groupId>
+      <scope>test</scope>
+      <version>2.23.0</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>junit-platform-engine</artifactId>
+      <groupId>org.junit.platform</groupId>
+      <scope>test</scope>
+      <version>1.6.0-M1</version>
+    </dependency>
+
+
+    <dependency>
+      <artifactId>junit-platform-runner</artifactId>
+      <groupId>org.junit.platform</groupId>
+      <scope>test</scope>
+      <version>1.6.0-M1</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-vintage-engine</artifactId>
+      <groupId>org.junit.vintage</groupId>
+      <scope>test</scope>
+      <version>5.6.0-M1</version>
+    </dependency>
+
+  </dependencies>
+  <groupId>com.brillio</groupId>
+  <modelVersion>4.0.0</modelVersion>
+  <version>1.0-SNAPSHOT</version>
 
 </project>

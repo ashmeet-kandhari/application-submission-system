@@ -1,20 +1,17 @@
 package com.brillio.counter;
 
-import com.brillio.kafka.ConsumerKafka;
+import com.brillio.queue.Consumer;
 
 public class NormalServiceCounter implements ServiceCounter {
-    private ConsumerKafka consumerKafka;
 
-    public NormalServiceCounter() {
-        this.consumerKafka = new ConsumerKafka("normalToken");
-    }
+  private Consumer consumer;
 
-    public NormalServiceCounter(ConsumerKafka consumerKafka) {
-        this.consumerKafka = consumerKafka;
-    }
+  public NormalServiceCounter(Consumer consumer) {
+    this.consumer = consumer;
+  }
 
-    @Override
-    public String nextToken() {
-        return consumerKafka.getMessage();
-    }
+  @Override
+  public String nextToken() {
+    return consumer.getMessage();
+  }
 }
