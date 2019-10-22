@@ -1,20 +1,17 @@
 package com.brillio.counter;
 
-import com.brillio.kafka.ConsumerKafka;
+import com.brillio.queue.ConsumerKafka;
 
 public class PremiumServiceCounter implements ServiceCounter {
-    private ConsumerKafka consumerKafka;
 
-    public PremiumServiceCounter() {
-        this.consumerKafka = new ConsumerKafka("premiumToken");
-    }
+  private ConsumerKafka consumerKafka;
 
-    public PremiumServiceCounter(ConsumerKafka consumerKafka) {
-        this.consumerKafka = consumerKafka;
-    }
+  public PremiumServiceCounter(ConsumerKafka consumerKafka) {
+    this.consumerKafka = consumerKafka;
+  }
 
-    @Override
-    public String nextToken() {
-        return consumerKafka.getMessage();
-    }
+  @Override
+  public String nextToken() {
+    return consumerKafka.getMessage();
+  }
 }
